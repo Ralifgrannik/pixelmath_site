@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /adm_7f3k9p2/
+Allow: /
+Sitemap: https://pixelmath.ru/sitemap.xml

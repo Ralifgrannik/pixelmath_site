@@ -1,0 +1,52 @@
+RewriteEngine On
+RewriteBase /
+
+# Маршрутизация для /articles
+RewriteRule ^articles/?$ articles.php [L,NC]
+
+# Маршрутизация для /article/slug
+RewriteRule ^article/(.+)$ article.php?slug=$1 [L,NC,QSA]
+
+# Маршрутизация для /ege-matematika/
+RewriteRule ^ege-matematika/?$ math.php [L,NC]
+
+# Маршрутизация для /task/1
+RewriteRule ^task/([0-9]+)$ task.php?id=$1 [L,NC,QSA]
+
+# Убедимся, что физические файлы и папки не переписываются
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# Перенаправление всех остальных запросов на index.php (если нужно)
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Заголовки для файлов (pdf, jpg, png)
+<FilesMatch "\.(pdf|jpg|png)$">
+    Header set Content-Disposition "attachment"
+</FilesMatch>
+
+# Отключение кэширования для jpg, png, mp3
+<FilesMatch "\.(jpg|png|mp3)$">
+    Header set Cache-Control "no-store, no-cache, must-revalidate"
+</FilesMatch>
+
+# Доступ к .yml файлам
+<FilesMatch "\.yml$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Запрет доступа к config.php
+<Files "config.php">
+    Order Deny,Allow
+    Deny from all
+</Files>
+
+# Ограничение доступа к /adm_7f3k9p2/, но разрешение для определённых файлов
+<FilesMatch "^adm_7f3k9p2/(admin_login\.php|logout\.php)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+<FilesMatch "^adm_7f3k9p2/.*">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>

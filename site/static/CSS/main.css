@@ -1,0 +1,772 @@
+/* Базовые стили (без изменений) */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Anonymous Pro', monospace;
+    background: white;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    padding: 0 40px;
+}
+
+.main_text {
+    text-align: center;
+    width: 55%;
+    padding: 30px;
+    animation: fadeInLeft 1s ease-out;
+    z-index: 1;
+}
+
+.main_text h1 {
+    margin-left: 15px;
+    font-size: 4.5em;
+    color: #2c3e50;
+    margin-bottom: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    letter-spacing: 2px;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    color: #495057;
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.description {
+    width: 70%;
+    margin: 20px auto 20px;
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #444;
+    background: #ffffff;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.retro {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #ffffff;
+    color: #000000;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 1.6em;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 #000;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.retro:hover {
+    background: #0db1a3;
+    color: #fff;
+    box-shadow: 8px 8px 0 #000;
+    transform: translateY(-3px);
+}
+
+.retro:active {
+    box-shadow: 2px 2px 0 #000;
+    transform: translate(4px, 4px);
+}
+
+.rbtn-big {
+    padding: 15px 40px;
+    font-size: 1.6em;
+}
+
+.equations-container {
+    width: 45%;
+    height: calc(100% - 40px);
+    background: white;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.typewriter-column {
+    width: 48%;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 1.4em;
+    color: #2c3e50;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.fade-out {
+    animation: fadeOut 0.5s ease forwards;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(-20px); }
+}
+
+@keyframes fadeInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.section {
+    padding: 60px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.section p, .section ul {
+    font-size: 1.2em;
+    color: #343a40;
+    line-height: 1.6;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin: 10px 0;
+}
+
+.section a {
+    color: #2c3e50;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+}
+
+.section a:hover {
+    color: #495057;
+}
+
+.example_img {
+    width: 100%;
+    border: 4px solid #000;
+    box-shadow: 6px 6px 0 #000;
+}
+
+.section_features {
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-bottom:50px;
+}
+
+.section_fearurse_left {
+    align-content: center;
+    font-size: 1.5em;
+    width: 30%;
+
+}
+
+.section_fearurse_left_center {
+    padding-left: 30px;
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    margin: 20px;
+}
+
+
+
+.section_fearurse_img {
+    width: 50%;
+}
+
+/* Затемнение фона */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    z-index: 10;
+    pointer-events: none;
+    transition: background 3s ease;
+}
+
+.overlay.active {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+/* Контейнер для частиц и искр */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 15;
+}
+
+/* Искры */
+.spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: #ffcc00;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffcc00, 0 0 20px #ff9900;
+    animation: sparkBurst 2s ease-out forwards;
+}
+
+@keyframes sparkBurst {
+    0% {
+        transform: scale(0) translate(0, 0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5) translate(
+            calc((random() - 0.5) * 200px),
+            calc((random() - 0.5) * 200px)
+        );
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(0) translate(
+            calc((random() - 0.5) * 400px),
+            calc((random() - 0.5) * 400px)
+        );
+        opacity: 0;
+    }
+}
+
+/* Частицы трансформации */
+.transform-particle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: #0db1a3;
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px #0db1a3;
+    animation: particleMove 3s ease-out forwards;
+}
+
+@keyframes particleMove {
+    0% {
+        transform: scale(0) rotate(45deg) translate(0, 0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2) rotate(90deg) translate(
+            calc((random() - 0.5) * 300px),
+            calc((random() - 0.5) * 300px)
+        );
+        opacity: 0.9;
+    }
+    100% {
+        transform: scale(0) rotate(135deg) translate(
+            calc((random() - 0.5) * 600px),
+            calc((random() - 0.5) * 600px)
+        );
+        opacity: 0;
+    }
+}
+
+
+
+
+/* Эффект взрыва для кнопки */
+.explosion {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #ff6600 20%, transparent 70%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    animation: explode 1s ease-out forwards;
+    z-index: 20;
+}
+
+@keyframes explode {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(3);
+        opacity: 0;
+    }
+}
+
+/* Трансформация кнопки */
+.retro.transforming {
+    animation: buttonTransform 11s ease forwards;
+}
+
+@keyframes buttonTransform {
+    0% {
+        transform: scale(1) rotate(0deg);
+        background: #ffffff;
+        box-shadow: 6px 6px 0 #000;
+    }
+    20% {
+        transform: scale(1.3) rotate(90deg);
+        background: #0db1a3;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    40% {
+        transform: scale(0.8) rotate(180deg);
+        background: #2c3e50;
+    }
+    60% {
+        transform: scale(1.5) rotate(270deg);
+        box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.7);
+    }
+    80% {
+        transform: scale(1) rotate(360deg);
+        background: #ff6600;
+    }
+    100% {
+        transform: scale(0) rotate(450deg);
+        opacity: 0;
+    }
+}
+
+/* Трансформация заголовка */
+h1.transforming {
+    animation: titleTransform 11s ease forwards;
+}
+
+@keyframes titleTransform {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        color: #2c3e50;
+    }
+    25% {
+        transform: translateY(-30px) rotate(10deg);
+        color: #0db1a3;
+        text-shadow: 0 0 20px #0db1a3;
+    }
+    50% {
+        transform: translateX(50px) rotate(-15deg);
+        color: #ff6600;
+    }
+    75% {
+        transform: translateY(20px) rotate(20deg);
+        text-shadow: 0 0 30px #ff6600;
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+}
+
+/* Трансформация описания */
+.description.transforming {
+    animation: descTransform 11s ease forwards;
+}
+
+@keyframes descTransform {
+    0% {
+        transform: scale(1);
+        border-color: #000;
+    }
+    30% {
+        transform: scale(1.2) rotate(5deg);
+        border-color: #0db1a3;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+    }
+    60% {
+        transform: scale(0.9) rotate(-10deg);
+        border-color: #ff6600;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+/* Трансформация столбцов с уравнениями */
+.typewriter-column.transforming {
+    animation: columnTransform 11s ease forwards;
+}
+
+@keyframes columnTransform {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    20% {
+        transform: translateX(-20px) skewY(10deg);
+        opacity: 0.8;
+    }
+    40% {
+        transform: translateX(30px) skewY(-15deg);
+        opacity: 0.6;
+    }
+    60% {
+        transform: translateX(-15px) skewY(20deg);
+        opacity: 0.4;
+    }
+    100% {
+        transform: translateX(0) skewY(0deg);
+        opacity: 0;
+    }
+}
+
+/* Убеждаемся, что при загрузке overlay не активен */
+body:not(.animating) .overlay {
+    background: rgba(0, 0, 0, 0);
+}
+
+/* Скрытый текст для SEO */
+.seo-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+/* Адаптивность (новые медиа-запросы) */
+@media (max-width: 1200px) {
+
+    .section_fearurse_left_center {
+    padding-left: 0px;
+    }
+
+    li {
+        font-family: 'Anonymous Pro', monospace;
+        font-size: 1.2em;
+    }
+
+    ul {
+    margin-bottom: 40px
+    }
+
+    .main_text h1 {
+        font-size: 3.5em;
+    }
+
+    .main_text {
+        width: 60%;
+        padding: 20px;
+    }
+
+    .equations-container {
+        width: 40%;
+    }
+
+    .typewriter-column {
+        font-size: 1.2em;
+    }
+
+    .retro {
+        padding: 12px 30px;
+        font-size: 1.4em;
+    }
+
+    .rbtn-big {
+        padding: 12px 30px;
+        font-size: 1.4em;
+    }
+
+    .description {
+        font-size: 1em;
+        width: 80%;
+        padding: 12px 15px;
+    }
+
+    .subtitle {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .section {
+        padding: 50px 30px;
+    }
+
+    .section h2 {
+        font-size: 2.2em;
+    }
+
+    .section p, .section ul {
+        font-size: 2em;
+    }
+
+    .section_fearurse_left {
+        font-size: 1.3em;
+    }
+    
+}
+
+@media (max-width: 900px) {
+    .content-wrapper {
+        flex-direction: column;
+        padding: 20px 5%;
+        justify-content: center;
+        height: auto; /* Убираем фиксированную высоту */
+        min-height: 100vh;
+    }
+
+    .main_text {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .main_text h1 {
+        font-size: 4.4em;
+        margin-left: 0;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+
+    .description {
+        width: 90%;
+        font-size: 1.7em;
+        padding: 20px 15px;
+        margin: 15px auto;
+    }
+
+    .retro {
+        padding: 10px 25px;
+        font-size: 1.2em;
+    }
+
+    .rbtn-big {
+        padding: 20px 30px;
+        margin: 10px 0 20px;
+        .main_text h1 {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1.7rem;
+        padding: 0.5rem;
+    }
+
+    .retro {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .rbtn-big {
+        margin: 20px 0;
+        padding: 0.9rem 1.3rem;
+        font-size: 1.3rem;
+    }
+
+    .section {
+        padding: 1.5rem 2%;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p, .section ul {
+        font-size: 0.9rem;
+    }
+
+        font-size: 2em;
+    }
+
+    .equations-container {
+        display: none;
+    }
+
+    .section_features {
+        display: block;
+    }
+
+    .section_fearurse_left {
+        width: 100%;
+        font-size: 1.2em;
+    }
+
+    .section_fearurse_img {
+        width: 80%;
+        margin: 15px auto;
+    }
+
+    .section {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .main_text h1 {
+        font-size: 3em;
+    }
+
+    .subtitle {
+        font-size: 0.8em;
+        margin-bottom: 15px;
+    }
+
+    .description {
+        font-size: 1.2em;
+        padding: 8px 10px;
+        margin: 10px auto;
+    }
+
+    .retro {
+        padding: 8px 20px;
+        font-size: 1em;
+    }
+
+    .rbtn-big {
+        padding: 15px 25px;
+        font-size: 1.5em;
+        .main_text h1 {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .retro {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .rbtn-big {
+        margin: 20px 0;
+        padding: 0.9rem 1.3rem;
+        font-size: 1.3rem;
+    }
+
+    .section {
+        padding: 1.5rem 2%;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p, .section ul {
+        font-size: 0.9rem;
+    }
+
+    }
+
+    .section {
+        padding: 30px 15px;
+    }
+
+    .section h2 {
+        font-size: 1.8em;
+        margin-bottom: 15px;
+    }
+
+    .section p, .section ul {
+        font-size: 1.2em;
+    }
+
+    .section_fearurse_left {
+        font-size: 1em;
+    }
+
+    .section_fearurse_img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 400px) {
+    .content-wrapper {
+        padding: 15px 3%;
+    }
+
+    .main_text h1 {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .description {
+        font-size: 1rem;
+        padding: 0.5rem;
+    }
+
+    .retro {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .rbtn-big {
+        margin: 20px 0;
+        padding: 0.9rem 1.3rem;
+        font-size: 1.3rem;
+    }
+
+    .section {
+        padding: 1.5rem 2%;
+    }
+
+    .section h2 {
+        font-size: 1.5rem;
+    }
+
+    .section p, .section ul {
+        font-size: 0.9rem;
+    }
+}

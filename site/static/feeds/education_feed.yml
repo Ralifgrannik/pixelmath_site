@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2025-04-28">
+    <shop>
+        <name>Порешаем? Подготовка к ЕГЭ по математике</name>
+        <company>PixelMath</company>
+        <url>https://pixelmath.ru/</url>
+        <currencies>
+            <currency id="RUB" rate="1"/>
+        </currencies>
+        <categories>
+            <category id="1">Подготовка к ЕГЭ</category>
+            <category id="2">Онлайн-курсы по математике</category>
+            <category id="3">Репетиторство по математике</category>
+        </categories>
+        <offers>
+            <offer id="ege-math-practice" available="true">
+                <name>Бесплатная онлайн-практика ЕГЭ по математике</name>
+                <url>https://pixelmath.ru/ege-matematika/</url>
+                <price>0</price>
+                <currencyId>RUB</currencyId>
+                <categoryId>1</categoryId>
+                <picture>https://pixelmath.ru/static/pictures/ege-practice.jpg</picture>
+                <description>Решайте задания ЕГЭ по математике онлайн бесплатно, проверяйте ответы и получайте подробные решения.</description>
+                <vendor>PixelMath</vendor>
+                <delivery>false</delivery>
+                <param name="type">online_course</param>
+                <param name="subject">Математика</param>
+                <param name="exam">ЕГЭ</param>
+                <param name="format">Онлайн</param>
+                <param name="price_type">free</param>
+                <param name="region">Россия</param>
+                <param name="audience">Школьники 10-11 классов</param>
+                <param name="keywords">ЕГЭ математика, подготовка к ЕГЭ, бесплатные задания ЕГЭ</param>
+            </offer>
+            <offer id="ege-math-variant" available="true">
+                <name>Генерация индивидуальных вариантов ЕГЭ по математике</name>
+                <url>https://pixelmath.ru/ege-matematika/</url>
+                <price>0</price>
+                <currencyId>RUB</currencyId>
+                <categoryId>2</categoryId>
+                <picture>https://pixelmath.ru/static/pictures/ege-variant.jpg</picture>
+                <description>Создавайте персонализированные варианты ЕГЭ по математике онлайн и практикуйтесь бесплатно.</description>
+                <vendor>PixelMath</vendor>
+                <delivery>false</delivery>
+                <param name="type">online_course</param>
+                <param name="subject">Математика</param>
+                <param name="exam">ЕГЭ</param>
+                <param name="format">Онлайн</param>
+                <param name="price_type">free</param>
+                <param name="region">Россия</param>
+                <param name="audience">Школьники, преподаватели</param>
+                <param name="keywords">варианты ЕГЭ, практика ЕГЭ математика, бесплатная подготовка</param>
+            </offer>
+            <offer id="ege-math-tutor" available="true">
+                <name>Консультации по ЕГЭ по математике</name>
+                <url>https://t.me/ralifgrannik</url>
+                <price>0</price>
+                <currencyId>RUB</currencyId>
+                <categoryId>3</categoryId>
+                <picture>https://pixelmath.ru/static/pictures/tutor.jpg</picture>
+                <description>Получите персональную помощь в подготовке к ЕГЭ по математике через Telegram.</description>
+                <vendor>PixelMath</vendor>
+                <delivery>false</delivery>
+                <param name="type">tutoring</param>
+                <param name="subject">Математика</param>
+                <param name="exam">ЕГЭ</param>
+                <param name="format">Онлайн</param>
+                <param name="price_type">free</param>
+                <param name="region">Россия</param>
+                <param name="audience">Школьники, родители</param>
+                <param name="keywords">репетитор ЕГЭ, консультации ЕГЭ математика, подготовка к экзамену</param>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>
