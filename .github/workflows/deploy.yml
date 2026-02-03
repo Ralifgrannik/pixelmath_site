@@ -3,7 +3,7 @@ name: Deploy to Reg.ru
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   ftp-deploy:
