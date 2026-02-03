@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           # Для Reg.ru путь обычно начинается сразу с www/
-          server-dir: .
+          server-dir: /
           # Указываем вашу папку с файлами
           local-dir: ./site/
           # Явно указываем протокол
